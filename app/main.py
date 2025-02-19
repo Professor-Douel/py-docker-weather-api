@@ -26,7 +26,9 @@ def get_weather() -> None:
         if current_weather:
             temperature = current_weather.get("temp_c", "N/A")
             condition = current_weather.get("condition", {}).get("text", "N/A")
-            logging.error(f"The weather in {city}: {temperature}°C, {condition}")
+            logging.error(
+                f"The weather in {city}: {temperature}°C, {condition}"
+            )
         else:
             logging.error("Can not get weather data.")
     except ValueError:
